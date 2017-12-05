@@ -26,4 +26,10 @@ public class FileUtil {
         return lines;
     }
 
+    public static List<Integer> convert1ColumnLine(List<String> lines) {
+        List<Integer> numbers = new ArrayList<>();
+        lines.forEach((s) -> numbers.add(Integer.parseInt(s)));
+        return numbers;
+    }
+
 }
