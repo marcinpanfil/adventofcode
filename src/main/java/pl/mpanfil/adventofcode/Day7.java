@@ -1,7 +1,6 @@
 package pl.mpanfil.adventofcode;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -19,9 +18,7 @@ class Day7 {
             String diskRef = line.substring(0, line.indexOf(" "));
             refDisks.add(diskRef);
             String[] disks = line.substring(line.indexOf("->") + 2).replaceAll(" ", "").split(",");
-            for (String disk : disks) {
-                usedDisks.add(disk);
-            }
+            Collections.addAll(usedDisks, disks);
         }
         for (String refDisk : refDisks) {
             if (!usedDisks.contains(refDisk)) {
@@ -31,43 +28,40 @@ class Day7 {
         return "";
     }
 
+
     int solve2(List<String> lines) {
         Map<String, Integer> weightMap = createWeightMap(lines);
-        String head = solve1(lines);
-        String[] subDisks = getSubDisks(head, lines);
-        String last = "";
-        while (subDisks != null) {
-            String notBalanced = findNotBalanced(subDisks, weightMap);
-            if(notBalanced.equals("")) {
-
-            }
-            subDisks = getSubDisks(notBalanced, lines);
-            last = notBalanced;
-        }
-        return 0;
+        return findNotBalanced(weightMap, lines);
     }
 
-    private String findNotBalanced(String[] disks, Map<String, Integer> weightMap) {
-        Map<Integer, Integer> values = new HashMap<>(disks.length);
-        for (String disk : disks) {
-            int value = weightMap.get(disk);
-            if (values.containsKey(value)) {
-                values.put(value, values.get(value) + 1);
+    private int findNotBalanced(Map<String, Integer> weightMap, List<String> lines) {
+        String head = solve1(lines);
+        String[] disks = getSubDisks(head, lines);
+        int result = 0;
+        while (true) {
+            Map<Integer, Integer> values = new HashMap<>(disks.length);
+            for (String disk : disks) {
+                int value = weightMap.get(disk);
+                if (values.containsKey(value)) {
+                    values.put(value, values.get(value) + 1);
+                } else {
+                    values.put(value, 1);
+                }
+            }
+            if (values.size() == 1) {
+                return result;
             } else {
-                values.put(value, 1);
+                int notBalanced = Collections.min(values.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
+                int balanced = Collections.max(values.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
+                for (String disk : disks) {
+                    int value = weightMap.get(disk);
+                    if (notBalanced == value) {
+                        disks = getSubDisks(disk, lines);
+                        result = getDiskWeight(disk, lines) + (balanced - notBalanced);
+                    }
+                }
             }
         }
-        if (values.size() == 1) {
-            return "";
-        }
-        int notBalanced = Collections.min(values.entrySet(), Comparator.comparingInt(Map.Entry::getValue)).getKey();
-        for (String disk : disks) {
-            int value = weightMap.get(disk);
-            if (notBalanced == value) {
-                return disk;
-            }
-        }
-        return "";
     }
 
     private Map<String, Integer> createWeightMap(List<String> lines) {
@@ -82,7 +76,7 @@ class Day7 {
         for (String line : lines) {
             if (line.contains("->")) {
                 String diskRef = line.substring(0, line.indexOf(" "));
-                weights.put(diskRef, getDiskWeight(diskRef, lines));
+                weights.put(diskRef, getWholeDiskWeight(diskRef, lines));
             }
         }
         return weights;
@@ -90,12 +84,16 @@ class Day7 {
 
     private int getDiskWeight(String disk, List<String> lines) {
         String line = getDiskLine(disk, lines);
+        return Integer.parseInt(line.substring(line.indexOf("(") + 1, line.indexOf(")")));
+    }
+
+    private int getWholeDiskWeight(String disk, List<String> lines) {
+        String line = getDiskLine(disk, lines);
         if (line.contains("->")) {
             String[] subDisks = getSubDisks(disk, lines);
-            System.out.println("disk " + disk);
             int weight = Integer.parseInt(line.substring(line.indexOf("(") + 1, line.indexOf(")")));
             for (String subDisk : subDisks) {
-                weight += getDiskWeight(subDisk, lines);
+                weight += getWholeDiskWeight(subDisk, lines);
             }
             return weight;
         } else {
