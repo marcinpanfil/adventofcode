@@ -18,7 +18,6 @@ class Day14 {
     }
 
     int solve2(String input) {
-//        int[][] bits = createTestBits();
         int[][] bits = createBitTable(createBitStrings(input));
         int[] nextRegion = findNextRegion(bits);
         int count = 0;
@@ -28,22 +27,6 @@ class Day14 {
             nextRegion = findNextRegion(bits);
         }
         return count;
-    }
-
-    private int[][] createTestBits() {
-        int[][] ints = new int[8][8];
-        ints[0][0] = 1;
-        ints[0][1] = 1;
-        ints[0][2] = 1;
-        ints[1][0] = 1;
-        ints[2][0] = 1;
-        ints[1][2] = 1;
-        ints[2][2] = 1;
-        ints[2][1] = 1;
-//        ints[2][2] = 1;
-//        ints[3][2] = 1;
-//        ints[3][3] = 1;
-        return ints;
     }
 
     private int[][] markRegion(int[][] bits, int i, int j) {
