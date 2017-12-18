@@ -1,6 +1,5 @@
 package pl.mpanfil.adventofcode;
 
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import pl.mpanfil.adventofcode.util.FileUtil;
 import pl.mpanfil.adventofcode.util.StringUtil;
@@ -8,6 +7,8 @@ import pl.mpanfil.adventofcode.util.StringUtil;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class Day16Test {
 
@@ -50,8 +51,24 @@ public class Day16Test {
     }
 
     @Test
+    public void testSolve2() {
+        List<String> instructions = new ArrayList<String>() {{
+            add("s1");
+            add("x3/4");
+            add("pe/b");
+        }};
+        assertEquals("abcde", day16.solve2(instructions, "abcde"));
+    }
+
+    @Test
     public void testSolution1() throws URISyntaxException {
         System.out.println(day16.solve1(StringUtil.split(FileUtil.readFile("day16_1_2.txt").get(0)),
+                "abcdefghijklmnop"));
+    }
+
+    @Test
+    public void testSolution2() throws URISyntaxException {
+        System.out.println(day16.solve2(StringUtil.split(FileUtil.readFile("day16_1_2.txt").get(0)),
                 "abcdefghijklmnop"));
     }
 

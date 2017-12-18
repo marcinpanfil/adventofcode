@@ -1,10 +1,31 @@
 package pl.mpanfil.adventofcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class Day16 {
 
     String solve1(List<String> instructions, String danceString) {
+        return dance(instructions, danceString);
+    }
+
+    String solve2(List<String> instructions, String danceString) {
+        List<String> alreadyDanced = new ArrayList<>();
+        String last = dance(instructions, danceString);
+        alreadyDanced.add(last);
+        while (true) {
+            last = dance(instructions, last);
+            if (alreadyDanced.contains(last)) {
+                break;
+            }
+            alreadyDanced.add(last);
+        }
+        int size = alreadyDanced.size();
+        int mod = 1000000000 % size - 1;
+        return alreadyDanced.get(mod == -1 ? size - 1 : mod);
+    }
+
+    private String dance(List<String> instructions, String danceString) {
         for (String instruction : instructions) {
             if (instruction.startsWith("s")) {
                 int size = Integer.parseInt(instruction.substring(1, instruction.length()));
