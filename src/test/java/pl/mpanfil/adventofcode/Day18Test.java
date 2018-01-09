@@ -30,6 +30,20 @@ public class Day18Test {
     }
 
     @Test
+    public void testSolve2() {
+        List<String> instructions = new ArrayList<String>() {{
+            add("snd 1");
+            add("snd 2");
+            add("snd p");
+            add("rcv a");
+            add("rcv b");
+            add("rcv c");
+            add("rcv d");
+        }};
+        assertEquals(3, day18.solve2(instructions));
+    }
+
+    @Test
     public void testSolution1() throws URISyntaxException {
 //        System.out.println(day17.solve1(FileUtil.readFile("day18_1_2.txt")));
         assertEquals(4601, day18.solve1(FileUtil.readFile("day18_1_2.txt")));
