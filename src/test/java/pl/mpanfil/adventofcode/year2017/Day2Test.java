@@ -3,7 +3,6 @@ package pl.mpanfil.adventofcode.year2017;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import pl.mpanfil.adventofcode.util.FileUtil;
-import pl.mpanfil.adventofcode.year2017.Day2;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -36,12 +35,12 @@ public class Day2Test {
 
     @Test
     public void testSolution1() throws URISyntaxException {
-        System.out.println(day2.solve1(FileUtil.readFile("day2_1.txt")));
+        System.out.println(day2.solve1(FileUtil.readFile("2017/day2_1.txt")));
     }
 
     @Test
     public void testSolution2() throws URISyntaxException {
-        System.out.println(day2.solve2(FileUtil.readFile("day2_2.txt")));
+        System.out.println(day2.solve2(FileUtil.readFile("2017/day2_2.txt")));
     }
 
 }

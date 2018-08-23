@@ -3,7 +3,6 @@ package pl.mpanfil.adventofcode.year2017;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import pl.mpanfil.adventofcode.util.FileUtil;
-import pl.mpanfil.adventofcode.year2017.Day8;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +25,12 @@ public class Day8Test {
 
     @Test
     public void testSolution1() throws Exception {
-        System.out.println(day8.solve1(FileUtil.readFile("day8_1_2.txt")));
+        System.out.println(day8.solve1(FileUtil.readFile("2017/day8_1_2.txt")));
     }
 
     @Test
     public void testSolution2() throws Exception {
-        System.out.println(day8.solve2(FileUtil.readFile("day8_1_2.txt")));
+        System.out.println(day8.solve2(FileUtil.readFile("2017/day8_1_2.txt")));
     }
 
 

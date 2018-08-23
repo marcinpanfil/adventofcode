@@ -3,7 +3,6 @@ package pl.mpanfil.adventofcode.year2017;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import pl.mpanfil.adventofcode.util.FileUtil;
-import pl.mpanfil.adventofcode.year2017.Day18;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -47,6 +46,6 @@ public class Day18Test {
     @Test
     public void testSolution1() throws URISyntaxException {
 //        System.out.println(day17.solve1(FileUtil.readFile("day18_1_2.txt")));
-        assertEquals(4601, day18.solve1(FileUtil.readFile("day18_1_2.txt")));
+        assertEquals(4601, day18.solve1(FileUtil.readFile("2017/day18_1_2.txt")));
     }
 }

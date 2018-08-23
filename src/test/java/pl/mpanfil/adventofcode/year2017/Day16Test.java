@@ -3,7 +3,6 @@ package pl.mpanfil.adventofcode.year2017;
 import org.junit.Test;
 import pl.mpanfil.adventofcode.util.FileUtil;
 import pl.mpanfil.adventofcode.util.StringUtil;
-import pl.mpanfil.adventofcode.year2017.Day16;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -63,13 +62,13 @@ public class Day16Test {
 
     @Test
     public void testSolution1() throws URISyntaxException {
-        System.out.println(day16.solve1(StringUtil.split(FileUtil.readFile("day16_1_2.txt").get(0)),
+        System.out.println(day16.solve1(StringUtil.split(FileUtil.readFile("2017/day16_1_2.txt").get(0)),
                 "abcdefghijklmnop"));
     }
 
     @Test
     public void testSolution2() throws URISyntaxException {
-        System.out.println(day16.solve2(StringUtil.split(FileUtil.readFile("day16_1_2.txt").get(0)),
+        System.out.println(day16.solve2(StringUtil.split(FileUtil.readFile("2017/day16_1_2.txt").get(0)),
                 "abcdefghijklmnop"));
     }
 
