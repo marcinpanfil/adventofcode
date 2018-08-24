@@ -35,7 +35,7 @@ public class Day13Test {
     }
 
     private List<String> createTestList() {
-        return new ArrayList<String>() {{
+        return new ArrayList<>() {{
             add("0: 3");
             add("1: 2");
             add("4: 4");

@@ -29,7 +29,6 @@ class Day6 {
 
     int solve2(List<Integer> numbers) {
         List<String> variations = new ArrayList<>();
-        int steps = 1;
         while (true) {
             int max = Collections.max(numbers);
             int index = numbers.indexOf(max);

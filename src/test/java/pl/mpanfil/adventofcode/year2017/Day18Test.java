@@ -14,7 +14,7 @@ public class Day18Test {
 
     @Test
     public void testSolve1() {
-        List<String> instructions = new ArrayList<String>() {{
+        List<String> instructions = new ArrayList<>() {{
             add("set a 1");
             add("add a 2");
             add("mul a a");
@@ -31,7 +31,7 @@ public class Day18Test {
 
     @Test
     public void testSolve2() {
-        List<String> instructions = new ArrayList<String>() {{
+        List<String> instructions = new ArrayList<>() {{
             add("snd 1");
             add("snd 2");
             add("snd p");

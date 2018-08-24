@@ -14,7 +14,7 @@ public class Day10Test {
 
     @Test
     public void testSolve1() {
-        List<Integer> input = new ArrayList<Integer>() {{
+        List<Integer> input = new ArrayList<>() {{
             add(3);
             add(4);
             add(1);

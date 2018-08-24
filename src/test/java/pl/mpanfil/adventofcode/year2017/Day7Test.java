@@ -36,7 +36,7 @@ public class Day7Test {
     }
 
     private List<String> createSampleData() {
-        return new ArrayList<String>() {{
+        return new ArrayList<>() {{
             add("pbga (66)");
             add("xhth (57)");
             add("ebii (61)");

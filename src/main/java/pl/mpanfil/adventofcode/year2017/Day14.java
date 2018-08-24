@@ -31,7 +31,7 @@ class Day14 {
 
     private int[][] markRegion(int[][] bits, int i, int j) {
         List<int[]> connected = findConnected(bits, i, j);
-        markPoints(bits, new ArrayList<int[]>() {{
+        markPoints(bits, new ArrayList<>() {{
             add(new int[]{i, j});
         }});
         while (connected.size() > 0) {

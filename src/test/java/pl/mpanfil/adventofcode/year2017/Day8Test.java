@@ -35,7 +35,7 @@ public class Day8Test {
 
 
     private List<String> createLines() {
-        return new ArrayList<String>() {{
+        return new ArrayList<>() {{
             add("b inc 5 if a > 1");
             add("a inc 1 if b < 5");
             add("c dec -10 if a >= 1");

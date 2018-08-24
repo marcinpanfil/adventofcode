@@ -35,7 +35,7 @@ public class Day19Test {
     }
 
     private List<String> createTestData() {
-        return new ArrayList<String>() {{
+        return new ArrayList<>() {{
             add("     |          ");
             add("     |  +--+    ");
             add("     A  |  C    ");

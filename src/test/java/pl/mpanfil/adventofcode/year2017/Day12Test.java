@@ -35,7 +35,7 @@ public class Day12Test {
     }
 
     private List<String> createInput() {
-        return new ArrayList<String>() {{
+        return new ArrayList<>() {{
             add("0 <-> 2");
             add("1 <-> 1");
             add("2 <-> 0, 3, 4");

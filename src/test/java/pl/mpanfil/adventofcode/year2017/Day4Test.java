@@ -13,8 +13,8 @@ public class Day4Test {
     private Day4 day4 = new Day4();
 
     @Test
-    public void solve1() throws Exception {
-        List<String> lines = new ArrayList<String>() {{
+    public void solve1() {
+        List<String> lines = new ArrayList<>() {{
             add("aa bb cc dd ee");
             add("aa bb cc dd aa");
             add("aa bb cc dd aaa");
@@ -23,8 +23,8 @@ public class Day4Test {
     }
 
     @Test
-    public void solve2() throws Exception {
-        List<String> lines = new ArrayList<String>() {{
+    public void solve2() {
+        List<String> lines = new ArrayList<>() {{
             add("abcde fghij");
             add("abcde xyz ecdab");
             add("a ab abc abd abf abj");

@@ -16,7 +16,7 @@ public class Day16Test {
 
     @Test
     public void testSolve1() {
-        List<String> instructions = new ArrayList<String>() {{
+        List<String> instructions = new ArrayList<>() {{
             add("s1");
             add("x3/4");
             add("pe/b");
@@ -26,7 +26,7 @@ public class Day16Test {
 
     @Test
     public void testSolve1a() {
-        List<String> instructions = new ArrayList<String>() {{
+        List<String> instructions = new ArrayList<>() {{
             add("s15");
         }};
         assertEquals("bcdefghijklmnopa", day16.solve1(instructions, "abcdefghijklmnop"));
@@ -34,7 +34,7 @@ public class Day16Test {
 
     @Test
     public void testSolve1b() {
-        List<String> instructions = new ArrayList<String>() {{
+        List<String> instructions = new ArrayList<>() {{
             add("x10/11");
             add("x0/15");
         }};
@@ -43,7 +43,7 @@ public class Day16Test {
 
     @Test
     public void testSolve1c() {
-        List<String> instructions = new ArrayList<String>() {{
+        List<String> instructions = new ArrayList<>() {{
             add("pa/p");
             add("pa/b");
         }};
@@ -52,7 +52,7 @@ public class Day16Test {
 
     @Test
     public void testSolve2() {
-        List<String> instructions = new ArrayList<String>() {{
+        List<String> instructions = new ArrayList<>() {{
             add("s1");
             add("x3/4");
             add("pe/b");

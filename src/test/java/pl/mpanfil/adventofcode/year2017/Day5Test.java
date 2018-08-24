@@ -13,13 +13,13 @@ public class Day5Test {
     private Day5 day5 = new Day5();
 
     @Test
-    public void testSolve1() throws Exception {
+    public void testSolve1() {
         List<Integer> steps = getExampleData();
         assertEquals(5, day5.solve1(steps));
     }
 
     @Test
-    public void testSolve2() throws Exception {
+    public void testSolve2() {
         List<Integer> steps = getExampleData();
         assertEquals(10, day5.solve2(steps));
     }

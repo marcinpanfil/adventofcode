@@ -15,7 +15,7 @@ public class Day2Test {
 
     @Test
     public void testSolve1() {
-        List<String> str = new ArrayList<String>() {{
+        List<String> str = new ArrayList<>() {{
             add("5 1 9 5");
             add("7 5 3");
             add("2 4 6 8");
@@ -25,10 +25,10 @@ public class Day2Test {
 
     @Test
     public void testSolve2() {
-        List<String> str = new ArrayList<String>() {{
-           add("5 9 2 8");
-           add("9 4 7 3");
-           add("3 8 6 5");
+        List<String> str = new ArrayList<>() {{
+            add("5 9 2 8");
+            add("9 4 7 3");
+            add("3 8 6 5");
         }};
         assertEquals(9, day2.solve2(str));
     }
