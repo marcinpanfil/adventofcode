@@ -6,7 +6,7 @@ import pl.mpanfil.adventofcode.year2017.Day1;
 
 public class Day1Test {
 
-    private Day1 day1 = new Day1();
+    private final Day1 day1 = new Day1();
 
     @Test
     public void testSolve1() {

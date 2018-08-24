@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class Day17Test {
 
-    private Day17 day17 = new Day17();
+    private final Day17 day17 = new Day17();
 
     @Test
     public void testSolve1() {

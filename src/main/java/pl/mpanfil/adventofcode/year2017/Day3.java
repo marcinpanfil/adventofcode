@@ -127,9 +127,9 @@ class Day3 {
         int posY = 0;
         int size = 1;
 
-        private int[][] data = new int[1001][1001];
-        private int middle = 500;
-        private int number;
+        private final int[][] data = new int[1001][1001];
+        private final int middle = 500;
+        private final int number;
         private int result = -1;
 
         Data(int number) {

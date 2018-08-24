@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Day6Test {
 
-    private Day6 day6 = new Day6();
+    private final Day6 day6 = new Day6();
 
     @Test
     public void testSolve1() {

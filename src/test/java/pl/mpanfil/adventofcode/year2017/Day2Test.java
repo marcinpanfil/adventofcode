@@ -11,7 +11,7 @@ import java.util.List;
 public class Day2Test {
 
 
-    private Day2 day2 = new Day2();
+    private final Day2 day2 = new Day2();
 
     @Test
     public void testSolve1() {

@@ -29,7 +29,7 @@ class Day14 {
         return count;
     }
 
-    private int[][] markRegion(int[][] bits, int i, int j) {
+    private void markRegion(int[][] bits, int i, int j) {
         List<int[]> connected = findConnected(bits, i, j);
         markPoints(bits, new ArrayList<>() {{
             add(new int[]{i, j});
@@ -42,14 +42,12 @@ class Day14 {
             }
             connected = tmp;
         }
-        return bits;
     }
 
-    private int[][] markPoints(int[][] bits, List<int[]> tmp) {
+    private void markPoints(int[][] bits, List<int[]> tmp) {
         for (int[] ints : tmp) {
             bits[ints[0]][ints[1]] = 0;
         }
-        return bits;
     }
 
     private List<int[]> findConnected(int[][] bits, int i, int j) {

@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class Day3Test {
 
-    private Day3 day3 = new Day3();
+    private final Day3 day3 = new Day3();
 
     @Test
     public void testSolve2() {

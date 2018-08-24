@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Day8Test {
 
-    private Day8 day8 = new Day8();
+    private final Day8 day8 = new Day8();
 
     @Test
     public void testSolve1() throws Exception {

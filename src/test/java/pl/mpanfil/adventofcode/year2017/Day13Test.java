@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Day13Test {
 
-    private Day13 day13 = new Day13();
+    private final Day13 day13 = new Day13();
 
     @Test
     public void testSolve1() {

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Day9Test {
 
-    private Day9 day9 = new Day9();
+    private final Day9 day9 = new Day9();
 
     @Test
     public void testSolve1Case1() {

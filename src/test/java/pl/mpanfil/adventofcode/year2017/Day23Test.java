@@ -5,7 +5,7 @@ import pl.mpanfil.adventofcode.util.FileUtil;
 
 public class Day23Test {
 
-    private Day23 day23 = new Day23();
+    private final Day23 day23 = new Day23();
 
     @Test
     public void testSolution1() throws Exception {

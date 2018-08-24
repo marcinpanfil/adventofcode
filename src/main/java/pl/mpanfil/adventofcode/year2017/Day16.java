@@ -28,7 +28,7 @@ class Day16 {
     private String dance(List<String> instructions, String danceString) {
         for (String instruction : instructions) {
             if (instruction.startsWith("s")) {
-                int size = Integer.parseInt(instruction.substring(1, instruction.length()));
+                int size = Integer.parseInt(instruction.substring(1));
                 int length = danceString.length();
                 danceString = danceString.substring(length - size) + danceString.substring(0, length - size);
             } else if (instruction.startsWith("x")) {
