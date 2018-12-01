@@ -26,6 +26,13 @@ public class FileUtil {
         return lines;
     }
 
+    public static List<Integer> readFileAsIntList(String fileName) throws URISyntaxException {
+        List<String> stringList = readFile(fileName);
+        List<Integer> integerList = new ArrayList<>();
+        stringList.stream().forEach(s -> integerList.add(Integer.parseInt(s)));
+        return integerList;
+    }
+
     public static List<Integer> convert1ColumnLine(List<String> lines) {
         List<Integer> numbers = new ArrayList<>();
         lines.forEach((s) -> numbers.add(Integer.parseInt(s)));
