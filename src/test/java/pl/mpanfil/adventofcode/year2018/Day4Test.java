@@ -27,14 +27,14 @@ public class Day4Test {
 
     @Test
     public void testSolution1() throws URISyntaxException {
-        System.out.println(day4.solve1(FileUtil.readFile("2018/day4_1.txt")));
-        assertEquals(99759, day4.solve1(FileUtil.readFile("2018/day4_1.txt")));
+        System.out.println(day4.solve1(FileUtil.readFile("2018/day4_1_2.txt")));
+        assertEquals(99759, day4.solve1(FileUtil.readFile("2018/day4_1_2.txt")));
     }
 
     @Test
     public void testSolution2() throws URISyntaxException {
-        System.out.println(day4.solve2(FileUtil.readFile("2018/day4_1.txt")));
-        assertEquals(97884, day4.solve2(FileUtil.readFile("2018/day4_1.txt")));
+        System.out.println(day4.solve2(FileUtil.readFile("2018/day4_1_2.txt")));
+        assertEquals(97884, day4.solve2(FileUtil.readFile("2018/day4_1_2.txt")));
     }
 
     private List<String> getTestInput() {
