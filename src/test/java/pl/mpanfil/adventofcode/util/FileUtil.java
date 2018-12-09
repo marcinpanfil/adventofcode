@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -31,6 +32,14 @@ public class FileUtil {
         List<Integer> integerList = new ArrayList<>();
         stringList.stream().forEach(s -> integerList.add(Integer.parseInt(s)));
         return integerList;
+    }
+
+    public static List<Integer> readOneLineFileAsIntList(String fileName) throws URISyntaxException {
+        List<String> stringList = readFile(fileName);
+        String[] intStr = stringList.get(0).split(" ");
+        List<Integer> result = new ArrayList<>();
+        Arrays.stream(intStr).forEach(s -> result.add(Integer.parseInt(s)));
+        return result;
     }
 
     public static List<Integer> convert1ColumnLine(List<String> lines) {
