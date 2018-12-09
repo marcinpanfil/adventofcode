@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.joining;
 
@@ -35,6 +36,43 @@ public class Day7 {
         }
 
         return toString(result);
+    }
+
+    public int solve2(List<String> input, int workers, int count) {
+        parseInput(input);
+        List<Character> result = new ArrayList<>();
+        List<Character> stepsToAdd = getFirsts();
+        Set<Character> steps = new TreeSet<>(stepsToAdd);
+        int time = 0;
+        int availableWorkers = workers;
+        Map<Character, Integer> processInfo = new HashMap<>();
+        Character nextStep = stepsToAdd.get(0);
+        processInfo.put(nextStep, 0);
+        while (result.size() < count) {
+            Set<Character> characters = new HashSet<>(processInfo.keySet());
+            for (Character character : characters) {
+                int processTime = 60 + ((int) character - 64);
+                int startTime = processInfo.get(character);
+                if (startTime + processTime == time) {
+                    processInfo.remove(character);
+                    result.add(character);
+                    List<Character> nextPossible = data.getOrDefault(character, Collections.emptyList()).stream()
+                            .filter(s -> result.containsAll(tasks.getOrDefault(s, Collections.emptyList()))).collect(Collectors.toList());
+                    steps.addAll(nextPossible);
+                }
+            }
+            for (Character step : steps) {
+                if (processInfo.size() < availableWorkers) {
+                    processInfo.put(step, time);
+                }
+            }
+            steps.removeAll(processInfo.keySet());
+
+            if (processInfo.size() == availableWorkers || steps.isEmpty() && result.size() != count) {
+                time++;
+            }
+        }
+        return time;
     }
 
     private String toString(List<Character> list) {

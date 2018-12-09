@@ -19,9 +19,20 @@ public class Day7Test {
     }
 
     @Test
+    public void testSolve2() {
+        assertEquals(15, day7.solve2(createInput(), 2, 6));
+    }
+
+    @Test
     public void testSolution1() throws URISyntaxException {
         String result = day7.solve1(FileUtil.readFile("2018/day7_1_2.txt"));
         assertEquals("AHJDBEMNFQUPVXGCTYLWZKSROI", result);
+    }
+
+    @Test
+    public void testSolution2() throws URISyntaxException {
+        int result = day7.solve2(FileUtil.readFile("2018/day7_1_2.txt"), 5, 26);
+        assertEquals(1031, result);
     }
 
     private List<String> createInput() {
